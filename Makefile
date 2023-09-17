@@ -12,7 +12,7 @@ run:
 	@echo " ----------------------------------------------------"
 	@echo
 	
-	@$(GO) run examples/example$(EXAMPLE)
+	@$(GO) run examples/example$(EXAMPLE).go
 
 # build:
 # 	@echo
