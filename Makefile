@@ -14,15 +14,6 @@ run:
 	
 	@$(GO) run examples/example$(EXAMPLE).go
 
-# build:
-# 	@echo
-# 	@echo " ----------------------------------------------------"
-# 	@echo "|              Building $(NAME)...                    |"
-# 	@echo " ----------------------------------------------------"
-# 	@echo
-
-# 	@$(GO) build -o bin/$(NAME) $(MAIN_FILE)
-
 setup:
 	@echo
 	@echo
