@@ -29,9 +29,13 @@ func NewWindow(width int, height int, title string) *glfw.Window {
 
 func Loop(window *glfw.Window) bool {
 	for !window.ShouldClose() {
-		window.SwapBuffers()
-		glfw.PollEvents()
+		gl.Clear(gl.COLOR_BUFFER_BIT)
 		return true
 	}
 	return false
+}
+
+func Refresh(window *glfw.Window) {
+	window.SwapBuffers()
+	glfw.PollEvents()
 }

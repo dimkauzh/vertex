@@ -24,3 +24,8 @@ func DrawRect(x, y float32, height, width float32, color [3]float32) {
 	gl.Vertex2f(x, y+height)
 	gl.End()
 }
+
+func SetBackgroundColor(color [3]float32) {
+	gl.ClearColor(color[0], color[1], color[2], 1)
+
+}
