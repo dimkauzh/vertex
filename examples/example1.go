@@ -14,5 +14,6 @@ func main() {
 
 	for w.Loop(window) {
 		draw.DrawLine(-0.5, -0.5, 0.5, 0.5, [3]float32{1, 0, 0})
+		draw.DrawRect(-0.5, 0.2, 0.5, 0.5, [3]float32{0, 1, 1})
 	}
 }
