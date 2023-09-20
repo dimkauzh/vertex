@@ -2,12 +2,24 @@ package window
 
 import (
 	"fmt"
+	"log"
+	"runtime"
 
 	"github.com/go-gl/gl/v2.1/gl"
 	"github.com/go-gl/glfw/v3.3/glfw"
 )
 
 func NewWindow(width int, height int, title string) *glfw.Window {
+	runtime.LockOSThread()
+
+	if err := glfw.Init(); err != nil {
+		log.Fatalln("failed to initialize glfw:", err)
+	}
+
+	glfw.WindowHint(glfw.Resizable, glfw.False)
+	glfw.WindowHint(glfw.ContextVersionMajor, 2)
+	glfw.WindowHint(glfw.ContextVersionMinor, 1)
+
 	window, err := glfw.CreateWindow(width, height, title, nil, nil)
 
 	if err != nil {
@@ -23,6 +35,7 @@ func NewWindow(width int, height int, title string) *glfw.Window {
 		panic(err)
 
 	}
+	gl.Viewport(0, 0, int32(width), int32(height))
 
 	return window
 }
