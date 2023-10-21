@@ -9,7 +9,27 @@ import (
 	"github.com/go-gl/glfw/v3.3/glfw"
 )
 
-func NewWindow(width int, height int, title string) *glfw.Window {
+type Window struct {
+	window *glfw.Window
+	width  int
+	height int
+	title  string
+}
+
+func (w *Window) Loop() bool {
+	for !w.window.ShouldClose() {
+		gl.Clear(gl.COLOR_BUFFER_BIT)
+		return true
+	}
+	return false
+}
+
+func (w *Window) Refresh() {
+	w.window.SwapBuffers()
+	glfw.PollEvents()
+}
+
+func NewWindow(width int, height int, title string) Window {
 	runtime.LockOSThread()
 
 	if err := glfw.Init(); err != nil {
@@ -37,18 +57,5 @@ func NewWindow(width int, height int, title string) *glfw.Window {
 	}
 	gl.Viewport(0, 0, int32(width), int32(height))
 
-	return window
-}
-
-func Loop(window *glfw.Window) bool {
-	for !window.ShouldClose() {
-		gl.Clear(gl.COLOR_BUFFER_BIT)
-		return true
-	}
-	return false
-}
-
-func Refresh(window *glfw.Window) {
-	window.SwapBuffers()
-	glfw.PollEvents()
+	return Window{window, width, height, title}
 }
