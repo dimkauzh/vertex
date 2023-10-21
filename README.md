@@ -1,10 +1,10 @@
 # vertex-engine
 
-A super-fast open-source game engine built with Go and OpenGL.
+A lightweight super-fast open-source game engine built with Go and OpenGL.
 
-## Setup for Developers
+## Building
 
-### Needed packages
+### Prerequisites
 #### Ubuntu/Debian-like Linux Distributions
 On Ubuntu/Debian-like Linux distributions, you need to install the following packages:
 
@@ -21,28 +21,19 @@ xcode-select --install
 #### Windows
 For Windows, you will need a C compiler. We recommend using [TDM-GCC](https://jmeubank.github.io/tdm-gcc/download/).
 
-### Setup
-To set up the development environment, follow these steps:
-Open a terminal.
-Navigate to the root directory of the vertex-engine project.
-
-Then run:
+### Getting the Go package
+Vertex is an ordinary go package, so you can get it using this command:
 ```bash
-make run
+go get github.com/dimkauzh/vertex@latest
 ```
-## Running Examples
-After setting up the development environment, you can run the examples.
 
-Open a terminal.
-Navigate to the root directory of the vertex-engine project.
-To run the default example, use the following command:
+### Running Examples
+1. Open a terminal.
+2. Clone the repo
+3. Navigate to the root directory of the vertex-engine project.
+4. To run the example, use the following command:
 ```bash
-make run
+make example
 ```
-This will run the default example.
-
-To specify a different example, use the EXAMPLE variable, like this(currently not availible):
-
-```bash
-make run EXAMPLE=2
-```
+## License
+This project is licensed under the GPLv3 License - see the LICENSE file for details.
