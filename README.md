@@ -1,6 +1,16 @@
-# vertex-engine
+<h1 align="center">Vertex</h1>
+<h3 align="center">A Go Game Engine that targets WebAssembly!</h3>
+
+<p align="center">
+  <a href="https://github.com/dimkauzh/vertex"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/dimkauzh/vertex"></a>
+  <a href="https://github.com/dimkauzh/vertex"><img alt="GitHub license" src="https://img.shields.io/github/license/dimkauzh/vertex"></a>
+  <a href="https://github.com/dimkauzh/vertex"><img alt="Lines of code" src="https://tokei.rs/b1/github/dimkauzh/vertex?category=lines"></a>
+</p>
 
 A lightweight super-fast open-source game engine built with Go and OpenGL.
+
+> **Please note that Webzen is currently under high maintenance and is not production-ready.** The project is actively being developed and improved, which is why there is only a `dev` branch available. Its currently in Beta status
+
 
 ## Building
 

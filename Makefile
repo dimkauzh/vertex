@@ -1,4 +1,5 @@
 NAME = vertex
+VERSION = none
 
 .PHONY: example release
 
