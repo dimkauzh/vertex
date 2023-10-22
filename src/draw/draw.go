@@ -13,7 +13,7 @@ func DrawLine(x1, y1, x2, y2 float32, color [3]float32) {
 	gl.Vertex2f(x2, y2)
 }
 
-func DrawRect(x, y float32, height, width float32, color [3]float32) {
+func DrawRect(x, y, height, width float32, color [3]float32) {
 	gl.Begin(gl.QUADS)
 	defer gl.End() // Ensure glEnd() is called even if an error occurs.
 
