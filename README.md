@@ -13,22 +13,7 @@
 ## Building
 
 ### Prerequisites
-#### Ubuntu/Debian-like Linux Distributions
-On Ubuntu/Debian-like Linux distributions, you need to install the following packages:
-
-```bash
-sudo apt-get install libgl1-mesa-dev xorg-dev
-```
-#### macOS
-On macOS, you need to have either Xcode or Command Line Tools for Xcode installed. You can install the Command Line Tools by running:
-
-```bash
-xcode-select --install
-```
-
-#### Windows
-For Windows, you will need a C compiler. We recommend using [TDM-GCC](https://jmeubank.github.io/tdm-gcc/download/).
-
+See [wiki](https://github.com/dimkauzh/vertex/wiki) what you need to use this package.
 ### Getting the Go package
 Vertex is an ordinary go package, so you can get it using this command:
 ```bash
