@@ -28,5 +28,8 @@ go get github.com/dimkauzh/vertex@latest
 ```bash
 make example
 ```
+
+## Documentation
+We have out documentation hosted on [this repo's wiki](https://github.com/dimkauzh/vertex/wiki).
 ## License
 This project is licensed under the GPLv3 License - see the LICENSE file for details.
