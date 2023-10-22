@@ -23,7 +23,13 @@ go get github.com/dimkauzh/vertex@latest
 ### Running Examples
 1. Open a terminal.
 2. Clone the repo
+```bash
+git clone https://github.com/dimkauzh/vertex.git
+```
 3. Navigate to the root directory of the vertex-engine project.
+```bash
+cd vertex
+```
 4. To run the example, use the following command:
 ```bash
 make example
