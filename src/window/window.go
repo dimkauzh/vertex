@@ -1,7 +1,6 @@
 package window
 
 import (
-	"fmt"
 	"log"
 	"runtime"
 
@@ -9,15 +8,18 @@ import (
 	"github.com/go-gl/glfw/v3.3/glfw"
 )
 
+const True int = 1
+const False int = 0
+
 type Window struct {
-	window *glfw.Window
-	width  int
-	height int
-	title  string
+	Window *glfw.Window
+	Width  int
+	Height int
+	Title  string
 }
 
 func (w *Window) Loop() bool {
-	for !w.window.ShouldClose() {
+	for !w.Window.ShouldClose() {
 		gl.Clear(gl.COLOR_BUFFER_BIT)
 		return true
 	}
@@ -25,37 +27,45 @@ func (w *Window) Loop() bool {
 }
 
 func (w *Window) Refresh() {
-	w.window.SwapBuffers()
+	w.Window.SwapBuffers()
 	glfw.PollEvents()
 }
 
-func NewWindow(width int, height int, title string) Window {
+func NewCustomWindow(width, height int, title string, resizable int) Window {
 	runtime.LockOSThread()
 
 	if err := glfw.Init(); err != nil {
 		log.Fatalln("failed to initialize glfw:", err)
 	}
 
-	glfw.WindowHint(glfw.Resizable, glfw.False)
+	if resizable == 1 {
+		glfw.WindowHint(glfw.Resizable, glfw.True)
+	} else if resizable == 0 {
+		glfw.WindowHint(glfw.Resizable, glfw.False)
+	} else {
+		log.Fatalln("Wrong definition of resizable")
+	}
+
 	glfw.WindowHint(glfw.ContextVersionMajor, 2)
 	glfw.WindowHint(glfw.ContextVersionMinor, 1)
 
 	window, err := glfw.CreateWindow(width, height, title, nil, nil)
 
 	if err != nil {
-		fmt.Println("Error create window")
-		panic(err)
+		log.Fatalln("Error create window:", err)
 	}
 
 	window.MakeContextCurrent()
 
 	if err := gl.Init(); err != nil {
-		fmt.Println("Error init gl")
-
-		panic(err)
+		log.Fatalln("Error init gl:", err)
 
 	}
 	gl.Viewport(0, 0, int32(width), int32(height))
 
 	return Window{window, width, height, title}
+}
+
+func NewWindow(width, height int, title string) Window {
+	return NewCustomWindow(width, height, title, False)
 }
