@@ -27,3 +27,6 @@ go.work
 bin/
 build/
 dist/
+
+# Sublime workspace files
+**.sublime-workspace
