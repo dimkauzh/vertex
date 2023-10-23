@@ -20,9 +20,6 @@ go.work
 # Mac cache files
 **.DS_Store
 
-# Sublime project files
-**.sublime-project
-
 # Output folders
 bin/
 build/
@@ -30,3 +27,6 @@ dist/
 
 # Sublime workspace files
 **.sublime-workspace
+
+# Sublime project files
+**.sublime-project
