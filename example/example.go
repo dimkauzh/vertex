@@ -14,8 +14,8 @@ func main() {
 
 	for window.Loop() {
 		draw.SetBackgroundColor([3]float32{0.2, 0.2, 0.2})
-		draw.DrawLine(-0.5, -0.5, 0.5, 0.5, [3]float32{1, 0, 0})
-		draw.DrawRect(-0.5, 0.2, 0.5, 0.5, [3]float32{0, 1, 1})
+		draw.DrawLine(100, 100, 500, 100, [3]float32{1, 0, 0})
+		draw.DrawRect(200, 200, 100, 100, [3]float32{0, 1, 1})
 
 		window.Refresh()
 	}

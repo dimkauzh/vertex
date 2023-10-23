@@ -20,6 +20,7 @@ func (e *Entity) NewRect(x, y, width, height float32, color [3]float32) {
     e.Rect = shape.NewRect(x, y, width, height, color)
 }
 
+// Deprecated: Won't be supported and will be deleted soon
 func (e *Entity) SetRectColor(color [3]float32) {
     e.Rect.Color = color
 }

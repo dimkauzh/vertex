@@ -61,7 +61,7 @@ func NewCustomWindow(width, height int, title string, resizable int) Window {
 		log.Fatalln("Error init gl:", err)
 
 	}
-	gl.Viewport(0, 0, int32(width), int32(height))
+	gl.Ortho(0, float64(width), float64(height), 0, -1, 1)
 
 	return Window{window, width, height, title}
 }
