@@ -1,10 +1,6 @@
-NAME = vertex
 VERSION = none
 
-.PHONY: example release
-
-example:
-	go run example/example.go
+.PHONY: release
 
 release:
 	GOPROXY=proxy.golang.org go list -m github.com/dimkauzh/vertex@$(VERSION)

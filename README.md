@@ -32,7 +32,7 @@ cd vertex
 ```
 4. To run the example, use the following command:
 ```bash
-make example
+go run example/example.go
 ```
 
 ## Documentation
