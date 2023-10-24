@@ -40,5 +40,5 @@ jobs:
     - name: Setup enviorment
       run: sudo apt-get install libgl1-mesa-dev xorg-dev
 
-    - name: Build Example
+    - name: Build Test1
       run: go build -o bin/test1 tests/test1/test.go
