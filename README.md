@@ -7,7 +7,7 @@
   <a href="https://github.com/dimkauzh/vertex"><img alt="Lines of code" src="https://tokei.rs/b1/github/dimkauzh/vertex?category=lines"></a>
 </p>
 
-> **Please note that vertex is currently under high maintenance and is not production-ready.** The project is actively being developed and improved, which is why there is only a `dev` branch available. Its currently in Pre-Alpha status
+> **Please note that vertex is currently under high maintenance and is not production-ready.** The project is actively being developed and improved, which is why there is only a `dev` branch available. Its currently in Beta status
 
 
 ## Building
