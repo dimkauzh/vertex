@@ -11,6 +11,8 @@ import (
 const True int = 1
 const False int = 0
 
+var started bool = false
+
 type Window struct {
 	Window *glfw.Window
 	Width  int
@@ -20,12 +22,23 @@ type Window struct {
 
 func (w *Window) Loop() bool {
 	for !w.Window.ShouldClose() {
+
+		if started {
+			w.Window.SwapBuffers()
+		}
+
+		glfw.PollEvents()
 		gl.Clear(gl.COLOR_BUFFER_BIT)
+
+		if !started {
+			started = true
+		}
 		return true
 	}
 	return false
 }
 
+// Deprecated: No longer needed because of the integration into the Loop() method
 func (w *Window) Refresh() {
 	w.Window.SwapBuffers()
 	glfw.PollEvents()
